@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var fs = require('fs');
 var jsonfile = require('jsonfile')
-var xmlParser = require('xml2json');
+var xmlParser = require('xml2js');
 
 
 var app = express();
@@ -151,10 +151,15 @@ router.get('/arena', jsonParser, function (req, res) {
         json_find = 0;
 
         gameInfo = process.env.WOWS_PATH + '/game_info.xml';
-        fs.readFile(gameInfo, function (err, data) {
-            json = xmlParser.toJson(data);
-            console.log("to json ->", json);
-            console.log(json['protocol']['game']['version_name'])
+
+        xml_string = fs.readFileSync(gameInfo, "utf8");
+        parser.parseString(xml_string, function(error, result) {
+            if(!error) {
+                console.log(result);
+            }
+            else {
+                console.log(error);
+            }
         });
 
         arenaJson = process.env.WOWS_PATH + '/replays/tempArenaInfo.json';
