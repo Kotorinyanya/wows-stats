@@ -21,7 +21,7 @@
 
                 <!--bot check-->
 
-                <div class="small">checking if you are human... ping, please reply pong</div>
+                <div>checking if you are human... ping, please reply pong</div>
 
                 <li ng-repeat="(key, value) in players" ng-if="value.relation!=2 && 45>number.parseFloat(value.winRate) && 66<number.parseInt(value.battles)">
                     <span class="value">[a5] {{value.ship.name}} {{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
