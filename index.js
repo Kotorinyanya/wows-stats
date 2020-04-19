@@ -148,13 +148,9 @@ router.get('/ship', jsonParser, function (req, res) {
 // arena api
 router.get('/arena', jsonParser, function (req, res) {
     if (process.platform == 'win32') {
-
-        json_find = 0;
-
+        game_version = '';
         gameInfo = process.env.WOWS_PATH + '/game_info.xml';
-
         xml_string = fs.readFileSync(gameInfo, "utf8");
-
         parser.parseString(xml_string, function (error, result) {
             if (!error) {
                 game_version = result.protocol.game[0].version_name[0];
@@ -164,13 +160,9 @@ router.get('/arena', jsonParser, function (req, res) {
             }
         });
 
-        arenaJson = process.env.WOWS_PATH + '/replays/tempArenaInfo.json';
-        arenaJson1 = process.env.WOWS_PATH + '/replays/' + game_version + '/tempArenaInfo.json';
-
+        arenaJson = process.env.WOWS_PATH + '/replays/' + game_version + '/tempArenaInfo.json';
         fs.access(arenaJson, fs.R_OK, function (err) {
-            // console.log(err);
             if (!err) {
-                json_find = 1;
                 jsonfile.readFile(arenaJson, function read(error, obj) {
                     if (!error) {
                         res.json(obj);
@@ -178,33 +170,14 @@ router.get('/arena', jsonParser, function (req, res) {
                         res.sendStatus(404);
                     }
                 });
+            } else {
+                res.sendStatus(404);
             }
         });
-
-        if (!json_find) {
-            fs.access(arenaJson1, fs.R_OK, function (err) {
-                // console.log(err);
-                if (!err) {
-                    json_find = 1;
-                    jsonfile.readFile(arenaJson1, function read(error, obj) {
-                        console.log(error);
-                        if (!error) {
-                            res.json(obj);
-                        } else {
-                            res.sendStatus(404);
-                        }
-                    });
-                }
-            });
-        }
-
-        if (!json_find) {
-            res.sendStatus(404);
-        }
-
     } else
         res.sendStatus(400);
 });
+
 
 app.listen(port);
 console.log('wows-stats is running on port: ' + port);
