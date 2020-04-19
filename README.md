@@ -4,8 +4,7 @@ A [XVM](http://www.modxvm.com/en/) like statistics engine for [World of Warships
 ##### Edit after fork:
 Added bot detection by winRate and battles (winRate < 45% and battles > 666), help us on banning bots by copy and paste the message to in-game chat.
 
-![Screenshot](https://tva1.sinaimg.cn/large/007S8ZIlgy1gdz3gckpcxj31bt0u0nor.jpg)
-![chat](https://tva1.sinaimg.cn/large/007S8ZIlgy1gdz3gp1q64j306z02bt8u.jpg)
+
 # Requirement
 You agree that statistics of a player does NOT mean how a player will perform in a game, and you will NOT use this tool in any way to create a toxic environment or demonstrate any unethical/immortal behaviour in World of Warships.
 If you do NOT agree, you shall NOT use this app.
