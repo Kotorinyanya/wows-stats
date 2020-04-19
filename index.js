@@ -5,7 +5,7 @@ var request = require('request');
 var fs = require('fs');
 var jsonfile = require('jsonfile')
 const xml2js = require('xml2js');
-const parser = new xml2js.Parser({ attrkey: "ATTR" });
+const parser = new xml2js.Parser({attrkey: "ATTR"});
 
 
 var app = express();
@@ -154,21 +154,19 @@ router.get('/arena', jsonParser, function (req, res) {
         gameInfo = process.env.WOWS_PATH + '/game_info.xml';
 
         xml_string = fs.readFileSync(gameInfo, "utf8");
-        parser.parseString(xml_string, function(error, result) {
-            if(!error) {
-                console.log(result);
-				version = result.protocol.game[0].version_name[0];
-				version = version.split('.').slice(0, 3);
-				console.log(version.join('.'));
-				console.log(result.game);
-            }
-            else {
+
+        parser.parseString(xml_string, function (error, result) {
+            if (!error) {
+                game_version = result.protocol.game[0].version_name[0];
+                game_version = game_version.split('.').slice(0, 3).join('.');
+            } else {
                 console.log(error);
             }
         });
 
         arenaJson = process.env.WOWS_PATH + '/replays/tempArenaInfo.json';
-        arenaJson1 = process.env.WOWS_PATH + '/replays/version/tempArenaInfo.json';
+        arenaJson1 = process.env.WOWS_PATH + '/replays/' + game_version + '/tempArenaInfo.json';
+
         fs.access(arenaJson, fs.R_OK, function (err) {
             if (!err) {
                 json_find = 1;
