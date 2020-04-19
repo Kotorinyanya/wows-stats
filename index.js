@@ -186,7 +186,7 @@ router.get('/arena', jsonParser, function (req, res) {
                 // console.log(err);
                 if (!err) {
                     json_find = 1;
-                    jsonfile.readFile(arenaJson, function read(error, obj) {
+                    jsonfile.readFile(arenaJson1, function read(error, obj) {
                         console.log(error);
                         if (!error) {
                             res.json(obj);
