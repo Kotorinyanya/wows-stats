@@ -154,6 +154,7 @@ router.get('/arena', jsonParser, function (req, res) {
         gameInfo = process.env.WOWS_PATH + '/game_info.xml';
 
         xml_string = fs.readFileSync(gameInfo, "utf8");
+
         parser.parseString(xml_string, function (error, result) {
             if (!error) {
                 game_version = result.protocol.game[0].version_name[0];
