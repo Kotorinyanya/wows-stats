@@ -3,6 +3,8 @@ var express 	= require('express');
 var bodyParser 	= require('body-parser');
 var fs			= require('fs');
 var request 	= require('request');
+var xmlParser   = require('xml2json');
+
 
 var app = express();
 var port = process.env.PORT || 8080;

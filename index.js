@@ -159,7 +159,6 @@ router.get('/arena', jsonParser, function (req, res) {
 
         arenaJson = process.env.WOWS_PATH + '/replays/tempArenaInfo.json';
         arenaJson1 = process.env.WOWS_PATH + '/replays/version/tempArenaInfo.json';
-        #TODO
         fs.access(arenaJson, fs.R_OK, function (err) {
             if (!err) {
                 json_find = 1;
