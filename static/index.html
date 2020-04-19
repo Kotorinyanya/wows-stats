@@ -16,7 +16,7 @@
 	  	  <h1><span class="hint" ng-hide="inGame">Last game: </span>{{ data.mapDisplayName }}</h1>
 	  	  <h2>{{ data.gameLogic }}</h2>
 	  	  <div class="teams">
-	  	    <div id="friendly" class="team">
+	  	    <span id="friendly" class="team">
 	  	      <h3>Our Team</h3>
 	  	      <ul>
 	  	      	<li ng-repeat="(key, value) in players" ng-if="value.relation!=2">
@@ -85,9 +85,9 @@
                   </div>
       		      </div>
 	  	      	</li>
-                  <div ng-repeat="(key, value) in players" ng-if="value.winRate < 45.0%">
-                      <div>{{value.name}} winRate {{value.winRate}} battles {{value.battles}}</div>
-                  </div>
+                  <li ng-repeat="(key, value) in players">
+                      <span class="value">{{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
+                  </li>
 	  	      </ul>
 	  	    </div>
 	  	    <div id="foe" class="team">
