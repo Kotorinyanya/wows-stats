@@ -157,6 +157,10 @@ router.get('/arena', jsonParser, function (req, res) {
         parser.parseString(xml_string, function(error, result) {
             if(!error) {
                 console.log(result);
+				version = result.protocol.game[0].version_name[0];
+				version = version.split('.').slice(0, 3);
+				console.log(version.join('.'));
+				console.log(result.game);
             }
             else {
                 console.log(error);
