@@ -85,7 +85,7 @@
                   </div>
       		      </div>
 	  	      	</li>
-                  <li ng-repeat="(key, value) in players" ng-if="value.winRate < 45">
+                  <li ng-repeat="(key, value) in players" ng-if="parseInt(value.winRate)<parseInt(45)">
                       <span class="value">{{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
                   </li>
 	  	      </ul>
