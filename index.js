@@ -193,6 +193,11 @@ router.get('/arena', jsonParser, function (req, res) {
                 }
             });
         }
+
+        if (!json_find) {
+            res.sendStatus(404);
+        }
+
     } else
         res.sendStatus(400);
 });
