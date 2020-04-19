@@ -160,8 +160,8 @@ router.get('/arena', jsonParser, function (req, res) {
             }
         });
 
-        // arenaJson = process.env.WOWS_PATH + '/replays/' + game_version + '/tempArenaInfo.json';
-        arenaJson = process.env.WOWS_PATH + '/replays/tempArenaInfo.json';
+        arenaJson = process.env.WOWS_PATH + '/replays/' + game_version + '/tempArenaInfo.json';
+        // arenaJson = process.env.WOWS_PATH + '/replays/tempArenaInfo.json';
 
         fs.access(arenaJson, fs.R_OK, function (err) {
             if (!err) {
