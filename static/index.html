@@ -21,14 +21,20 @@
 
                 <!--bot check-->
 
-                <div>checking if you are human... ping, please reply pong</div>
+                <div>checking if you were human... ping, please reply pong</div>
 
                 <li ng-repeat="(key, value) in players" ng-if="value.relation!=2 && 45>number.parseFloat(value.winRate) && 66<number.parseInt(value.battles)">
-                    <span class="value">[a5] {{value.ship.name}} {{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
+                    <span class="value">[a5] {{value.ship.name}}
+                        {{value.name}} winRate {{value.winRate}} battles {{value.battles}} DPG {{value.avgDmg}} K/D {{value.kdRatio}} EXP/G {{value.avgExp}};
+                        {{value.ship.name}} winRate {{value.ship.winRate}} battles {{value.ship.battles}} DPG {{value.ship.avgDmg}} K/D {{value.ship.kdRatio}} EXP/G {{value.ship.avgExp}}
+                    </span>
                 </li>
 
                 <li ng-repeat="(key, value) in players" ng-if="value.relation==2 && 45>number.parseFloat(value.winRate) && 66<number.parseInt(value.battles)">
-                    <span class="value">[e5] {{value.ship.name}} {{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
+                    <span class="value">[e5] {{value.ship.name}}
+                        {{value.name}} winRate {{value.winRate}} battles {{value.battles}} DPG {{value.avgDmg}} K/D {{value.kdRatio}} EXP/G {{value.avgExp}};
+                        {{value.ship.name}} winRate {{value.ship.winRate}} battles {{value.ship.battles}} DPG {{value.ship.avgDmg}} K/D {{value.ship.kdRatio}} EXP/G {{value.ship.avgExp}}
+                    </span>
                 </li>
 
                 <!--嘴臭模版-->
