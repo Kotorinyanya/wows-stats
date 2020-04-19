@@ -93,7 +93,7 @@
                           return parseInt(val1) > parseInt(val2);
                       }
                   </script>
-                  <li ng-repeat="(key, value) in players" ng-if="isGreater(45, value.winRate)">
+                  <li ng-repeat="(key, value) in players" ng-if="isGreater(45, 1)">
                       <span class="value">{{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
                   </li>
 	  	      </ul>
