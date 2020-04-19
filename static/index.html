@@ -88,12 +88,7 @@
                   </div>
       		      </div>
 	  	      	</li>
-                  <script>
-                      $scope.isGreater = function (val1, val2) {
-                          return parseInt(val1) > parseInt(val2);
-                      }
-                  </script>
-                  <li ng-repeat="(key, value) in players" ng-if="45>1">
+                  <li ng-repeat="(key, value) in players" ng-if="45>number.parseInt(value.winRate)">
                       <span class="value">{{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
                   </li>
 	  	      </ul>

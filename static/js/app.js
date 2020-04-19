@@ -160,6 +160,7 @@ app.controller('TeamStatsCtrl', function ($scope, $http, api) {
 	$scope.dateTime = "";
   	$scope.data = {};
   	$scope.players = [];
+	$scope.number = Number;
 	var updateArena = function() {
 		$http({
 			method: 'GET',
