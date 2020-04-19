@@ -168,7 +168,7 @@ router.get('/arena', jsonParser, function (req, res) {
         arenaJson1 = process.env.WOWS_PATH + '/replays/' + game_version + '/tempArenaInfo.json';
 
         fs.access(arenaJson, fs.R_OK, function (err) {
-            consel.log(err);
+            console.log(err);
             if (!err) {
                 json_find = 1;
                 jsonfile.readFile(arenaJson, function read(error, obj) {
@@ -183,7 +183,7 @@ router.get('/arena', jsonParser, function (req, res) {
 
         if (!json_find) {
             fs.access(arenaJson1, fs.R_OK, function (err) {
-                consel.log(err);
+                console.log(err);
                 if (!err) {
                     json_find = 1;
                     jsonfile.readFile(arenaJson, function read(error, obj) {
