@@ -2,8 +2,14 @@
 A [XVM](http://www.modxvm.com/en/) like statistics engine for [World of Warships](http://worldofwarships.com/)
 
 ##### Edit after fork:
-Added bot detection by winRate and battles (winRate < 45% and battles > 666), help us on banning bots by copy and paste the message to in-game chat.
+- Added bot detection by winRate and battles (winRate < 45% and battles > 666), help us on banning bots by copy and paste the message to in-game chat.
+- Fix replay json location.
 
+![screenshot](https://tva1.sinaimg.cn/large/007S8ZIlgy1gdz4bf4bwxj31gs0qsk8e.jpg)
+
+Send the message to in-game chat manually
+
+![chat](https://tva1.sinaimg.cn/large/007S8ZIlgy1gdz4bfzm3rj30cq063ad9.jpg)
 
 # Requirement
 You agree that statistics of a player does NOT mean how a player will perform in a game, and you will NOT use this tool in any way to create a toxic environment or demonstrate any unethical/immortal behaviour in World of Warships.
