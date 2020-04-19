@@ -5,7 +5,7 @@ A [XVM](http://www.modxvm.com/en/) like statistics engine for [World of Warships
 - Added bot detection by winRate and battles (winRate < 45% and battles > 666), help us on banning bots by copy and paste the message to in-game chat.
 - Fix replay json location.
 
-![screenshot](https://tva1.sinaimg.cn/large/007S8ZIlgy1gdz4bf4bwxj31gs0qsk8e.jpg)
+![screenshot](https://tva1.sinaimg.cn/large/007S8ZIlgy1gdz4gywl0hj31gs0qsne3.jpg)
 
 Send the message to in-game chat manually
 
