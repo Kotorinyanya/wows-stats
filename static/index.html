@@ -17,9 +17,12 @@
         <div class="stats" ng-show="players.length>0">
             <h1><span class="hint" ng-hide="inGame">Last game: </span>{{ data.mapDisplayName }}</h1>
             <h2>{{ data.gameLogic }}</h2>
-            <div class="teams">
+            <h5 class="teams">
 
                 <!--bot check-->
+
+                <div class="small">checking if you are human... ping, please reply pong</div>
+
                 <li ng-repeat="(key, value) in players" ng-if="value.relation!=2 && 45>number.parseFloat(value.winRate) && 66<number.parseInt(value.battles)">
                     <span class="value">[a5] {{value.ship.name}} {{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
                 </li>
@@ -28,11 +31,9 @@
                     <span class="value">[e5] {{value.ship.name}} {{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
                 </li>
 
-                <div class="small">checking if you are human... ping, please reply pong</div>
-
                 <!--嘴臭模版-->
 
-                <div class="small">还敢嘴臭？看看自己的数据吧</div>
+                <h5>还敢嘴臭？看看自己的数据吧</h5>
 
 	  	    <span id="friendly" class="team">
 	  	      <h3>Our Team</h3>
