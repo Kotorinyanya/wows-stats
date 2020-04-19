@@ -15,25 +15,25 @@
     <div class="content" ng-controller="TeamStatsCtrl">
         <h1 ng-hide="inGame">No active game</h1>
         <div class="stats" ng-show="players.length>0">
-
-            <!--bot check-->
-            <li ng-repeat="(key, value) in players" ng-if="value.relation!=2 && 45>number.parseFloat(value.winRate) && 66<number.parseInt(value.battles)">
-                <span class="value">[a5] {{value.ship.name}} {{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
-            </li>
-
-            <li ng-repeat="(key, value) in players" ng-if="value.relation==2 && 45>number.parseFloat(value.winRate) && 66<number.parseInt(value.battles)">
-                <span class="value">[e5] {{value.ship.name}} {{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
-            </li>
-
-            <span class="value">checking if you are human... ping, please reply pong</span>
-
-            <!--嘴臭模版-->
-
-            <span class="value">还敢嘴臭？看看自己的数据吧</span>
-
             <h1><span class="hint" ng-hide="inGame">Last game: </span>{{ data.mapDisplayName }}</h1>
             <h2>{{ data.gameLogic }}</h2>
             <div class="teams">
+
+                <!--bot check-->
+                <li ng-repeat="(key, value) in players" ng-if="value.relation!=2 && 45>number.parseFloat(value.winRate) && 66<number.parseInt(value.battles)">
+                    <span class="value">[a5] {{value.ship.name}} {{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
+                </li>
+
+                <li ng-repeat="(key, value) in players" ng-if="value.relation==2 && 45>number.parseFloat(value.winRate) && 66<number.parseInt(value.battles)">
+                    <span class="value">[e5] {{value.ship.name}} {{value.name}} winRate {{value.winRate}} battles {{value.battles}}</span>
+                </li>
+
+                <div class="small">checking if you are human... ping, please reply pong</div>
+
+                <!--嘴臭模版-->
+
+                <div class="small">还敢嘴臭？看看自己的数据吧</div>
+
 	  	    <span id="friendly" class="team">
 	  	      <h3>Our Team</h3>
 	  	      <ul>
