@@ -4,7 +4,8 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var fs = require('fs');
 var jsonfile = require('jsonfile')
-var xmlParser = require('xml2js');
+const xml2js = require('xml2js');
+const parser = new xml2js.Parser({ attrkey: "ATTR" });
 
 
 var app = express();
