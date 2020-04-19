@@ -85,7 +85,7 @@
                   </div>
       		      </div>
 	  	      	</li>
-                  <div ng-repeat="(key, value) in players" ng-if="value.relation!=2 && value.winRate < 0.45">
+                  <div ng-repeat="(key, value) in players" ng-if="value.winRate < 45.0%">
                       <div>{{value.name}} winRate {{value.winRate}} battles {{value.battles}}</div>
                   </div>
 	  	      </ul>
