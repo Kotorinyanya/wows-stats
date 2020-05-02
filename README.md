@@ -1,9 +1,11 @@
 # wows-stats
 A [XVM](http://www.modxvm.com/en/) like statistics engine for [World of Warships](http://worldofwarships.com/)
 
+forked from [wows-stats](https://github.com/wows-stats/wows-stats) 
+
 ##### Edit after fork:
-- Added bot detection by winRate and battles (winRate < 45% and battles > 666), help us on banning bots by copy and paste the message to in-game chat.
-- Fix replay json location.
+- Added bot detection by winRate and battles (winRate < 45% and battles > 666)
+- Fix replay json path with version number
 
 ![screenshot](https://tva1.sinaimg.cn/large/007S8ZIlgy1gdz4gywl0hj31gs0qsne3.jpg)
 
