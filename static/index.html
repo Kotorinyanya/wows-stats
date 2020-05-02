@@ -20,19 +20,17 @@
             <h5 class="teams">
 
                 <!--bot check-->
-
                 <div>
-                    I'm a community Wargaming developer, now reporting accounts in this match with a record of repetitive and excessive passive play that are suspicious to be bots.
-                    Follow us on GITHUB github.com/wows-stats/wows-stats
+                    Now reporting players that are suspicious to be bots. Follow us on GITHUB github.com/Kotorinyanya/wows-stats
                 </div>
 
+                <!--winRate and battles-->
                 <li ng-repeat="(key, value) in players" ng-if="value.relation!=2 && 45>number.parseFloat(value.winRate) && 666<number.parseInt(value.battles)">
                     <span class="value">[a4] {{value.ship.name}}
                         {{value.name}} winRate {{value.winRate}} battles {{value.battles}};
                         {{value.ship.name}} winRate {{value.ship.winRate}} battles {{value.ship.battles}} DPG {{value.ship.avgDmg}} K/D {{value.ship.kdRatio}} EXP/G {{value.ship.avgExp}}
                     </span>
                 </li>
-
                 <li ng-repeat="(key, value) in players" ng-if="value.relation==2 && 45>number.parseFloat(value.winRate) && 666<number.parseInt(value.battles)">
                     <span class="value">[e4] {{value.ship.name}}
                         {{value.name}} winRate {{value.winRate}} battles {{value.battles}};
@@ -40,13 +38,21 @@
                     </span>
                 </li>
 
+                <!--hidden profile-->
+                <li ng-repeat="(key, value) in players" ng-if="value.relation!=2">
+                    <span class="value" ng-show="value.err">[a4] {{value.ship.name}} {{value.name}}</span>
+                </li>
+                <li ng-repeat="(key, value) in players" ng-if="value.relation==2">
+                    <span class="value" ng-show="value.err">[e4] {{value.ship.name}} {{value.name}}</span>
+                </li>
+                <div>has a hidden profile</div>
+
                 <div>
                     Checking if you were bots... ping, please reply pong <br/>
                     According to WOWS ELUA 5.07 and ELUA 5.08, bots and players with repetitive and excessive passive play will be banned.
                 </div>
 
                 <!--嘴臭模版-->
-
                 <br>
                 <div>嘴臭？看看自己的数据吧</div>
 
