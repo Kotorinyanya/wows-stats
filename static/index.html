@@ -40,13 +40,12 @@
                 </li>
 
                 <!--hidden profile-->
-                <li ng-repeat="(key, value) in players" ng-if="value.relation!=2">
-                    <span class="value" ng-show="value.err">[a4] {{value.ship.name}} {{value.name}}</span>
+                <li ng-repeat="(key, value) in players" ng-if="value.relation!=2 && value.err">
+                    <span class="value">[a4] {{value.ship.name}} {{value.name}} has a hidden profile</span>
                 </li>
                 <li ng-repeat="(key, value) in players" ng-if="value.relation==2">
-                    <span class="value" ng-show="value.err">[e4] {{value.ship.name}} {{value.name}}</span>
+                    <span class="value">[e4] {{value.ship.name}} {{value.name}} has a hidden profile</span>
                 </li>
-                <div>has a hidden profile</div>
 
                 <div>
                     Checking if you were bots... ping, please reply pong <br/>
