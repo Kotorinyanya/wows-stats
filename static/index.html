@@ -53,7 +53,7 @@
 <!--                        {{value.ship.name}} winRate {{value.ship.winRate}} battles {{value.ship.battles}} DPG {{value.ship.avgDmg}} K/D {{value.ship.kdRatio}} EXP/G {{value.ship.avgExp}}</div>-->
                 </li>
                 <li ng-repeat="(key, value) in players" ng-if="value.relation==2">
-                    <div class="value" ng-show="value.err">[e4] {{value.ship.name}} {{value.name}} has a hidden profile</div>
+                    <div class="value" ng-show="value.err">{{value.err}}</div>
 <!--                    <div class="value" ng-hide="value.err">[e4] {{value.ship.name}}-->
 <!--                        {{value.name}} winRate {{value.winRate}} battles {{value.battles}};-->
 <!--                        {{value.ship.name}} winRate {{value.ship.winRate}} battles {{value.ship.battles}} DPG {{value.ship.avgDmg}} K/D {{value.ship.kdRatio}} EXP/G {{value.ship.avgExp}}</div>-->
